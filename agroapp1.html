@@ -29,9 +29,15 @@
             if (isMobile()) {
                 var ua = navigator.userAgent.toLowerCase();
                 if (ua.indexOf("android") > -1) {
-                    window.location.href = "https://play.google.com/store/apps/details?id=br.com.eagro";
+                    window.location.href = "br.com.eagro://";
+                    setTimeout(function () {
+                        window.location.href = "https://play.google.com/store/apps/details?id=br.com.eagro";
+                    }, 500);
                 } else if (ua.indexOf("iphone") > -1 || ua.indexOf("ipad") > -1 || ua.indexOf("ipod") > -1) {
-                    window.location.href = "https://apps.apple.com/br/app/e-agro-cr%C3%A9dito-e-marketplace/id1667360272?l=en";
+                    window.location.href = "br.com.eagro://";
+                    setTimeout(function () {
+                        window.location.href = "https://apps.apple.com/br/app/e-agro-cr%C3%A9dito-e-marketplace/id1667360272?l=en";
+                    }, 500);
                 }
             } else {
                 window.location.href = "br.com.eagro://";
