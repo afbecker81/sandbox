@@ -1,70 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      background: linear-gradient(to bottom right, #00FF00, #0000FF);
-      margin: 0;
-      padding: 0;
-    }
-
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-
-    .image {
-      width: 300px;
-      height: 300px;
-      background-image: url('eagro.png');
-      background-size: cover;
-    }
-
-    .text {
-      margin-top: 20px;
-      font-size: 24px;
-      color: white;
-      text-align: center;
-    }
-  </style>
+    <title>Eagro</title>
+    <style>
+        body {
+            background: linear-gradient(to right, green, blue);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="image"></div>
-    <div class="text">Clique para abrir o aplicativo E-Agro</div>
-  </div>
-
-  <script>
-    function openApp() {
-      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    
-      if (/android/i.test(userAgent)) {
-        window.location.href = 'intent://#Intent;scheme=br.com.eagro;package=br.com.eagro;end;';
-        setTimeout(function() {
-          window.location.href = 'https://play.google.com/store/apps/details?id=br.com.eagro';
-        }, 500);
-      } else if (/iPad|iPhone|iPod/.test(userAgent) || (userAgent.includes("Mac") && "ontouchend" in document)) {
-        var iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.src = 'br.com.eagro://';
-        document.body.appendChild(iframe);
-        setTimeout(function() {
-          window.location.href = 'https://apps.apple.com/br/app/e-agro-cr%C3%A9dito-e-marketplace/id1667360272?l=en';
-        }, 500);
-      } else {
-        window.location.href = 'https://apps.apple.com/br/app/e-agro-cr%C3%A9dito-e-marketplace/id1667360272?l=en';
-      }
-    }
-
-
-
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelector('.container').addEventListener('click', openApp);
-    });
-  </script>
+    <img id="eagro" src="eagro.png" onclick="openApp()" />
+    <script>
+        function isMobile() {
+            return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+        }
+        function openApp() {
+            if (isMobile()) {
+                var ua = navigator.userAgent.toLowerCase();
+                if (ua.indexOf("android") > -1) {
+                    window.location.href = "https://play.google.com/store/apps/details?id=br.com.eagro";
+                } else if (ua.indexOf("iphone") > -1 || ua.indexOf("ipad") > -1 || ua.indexOf("ipod") > -1) {
+                    window.location.href = "https://apps.apple.com/br/app/e-agro-cr%C3%A9dito-e-marketplace/id1667360272?l=en";
+                }
+            } else {
+                window.location.href = "br.com.eagro://";
+            }
+        }
+    </script>
 </body>
 </html>
