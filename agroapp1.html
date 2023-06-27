@@ -44,12 +44,13 @@
       
       if (/android/i.test(userAgent)) {
         window.location.href = 'br.com.eagro://';
-      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        window.location.href = 'itms-apps://apps.apple.com/br/app/e-agro-cr%C3%A9dito-e-marketplace/id1667360272?l=en';
+      } else if (/iPad|iPhone|iPod/.test(userAgent) || (userAgent.includes("Mac") && "ontouchend" in document)) {
+        window.location.href = 'br.com.eagro://';
       } else {
-        window.location.href = 'https://play.google.com/store/apps/details?id=br.com.eagro';
+        window.location.href = 'https://apps.apple.com/br/app/e-agro-cr%C3%A9dito-e-marketplace/id1667360272?l=en';
       }
     }
+
 
     document.addEventListener('DOMContentLoaded', function() {
       document.querySelector('.container').addEventListener('click', openApp);
