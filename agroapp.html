@@ -29,9 +29,26 @@
 </head>
 <body>
     <div class="logo-container">
-        <a class="app-link" href="br.com.eagro://">
+        <a class="app-link" onClick="openAppOrPlayStore()">
             <img src="eagro.png" alt="Imagem quadrada média">
         </a>
     </div>
 </body>
+<script>
+    function openAppOrPlayStore() {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      
+      if (/android/i.test(userAgent)) {
+        // Dispositivo Android
+        window.location.href = 'intent://br.com.eagro/#Intent;scheme=br.com.eagro;package=com.your.package.name;end';
+      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        // Dispositivo iOS
+        window.location.href = 'br.com.eagro://';
+      } else {
+        // Nenhum aplicativo suportado instalado, redirecionar para a Play Store ou App Store
+        window.location.href = 'https://play.google.com/store/apps/details?id=br.com.eagro'; // URL da Play Store
+      }
+    }
+  </script>
+
 </html>
