@@ -41,15 +41,22 @@
   <script>
     function openApp() {
       var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-      
+    
       if (/android/i.test(userAgent)) {
         window.location.href = 'br.com.eagro://';
+        setTimeout(function() {
+          window.location.href = 'https://play.google.com/store/apps/details?id=br.com.eagro';
+        }, 500);
       } else if (/iPad|iPhone|iPod/.test(userAgent) || (userAgent.includes("Mac") && "ontouchend" in document)) {
         window.location.href = 'br.com.eagro://';
+        setTimeout(function() {
+          window.location.href = 'https://apps.apple.com/br/app/e-agro-cr%C3%A9dito-e-marketplace/id1667360272?l=en';
+        }, 500);
       } else {
         window.location.href = 'https://apps.apple.com/br/app/e-agro-cr%C3%A9dito-e-marketplace/id1667360272?l=en';
       }
     }
+
 
 
     document.addEventListener('DOMContentLoaded', function() {
