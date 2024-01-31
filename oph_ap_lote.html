@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Payments Hub</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+
+        header {
+            background: linear-gradient(45deg, #b41a83 0%, #cc092f 49%, #f36279 100%);
+            padding: 20px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        footer {
+            background: linear-gradient(45deg, #b41a83 0%, #cc092f 49%, #f36279 100%);
+            color: #ffffff;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        th,
+        td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f8f8;
+        }
+
+        .print-icon {
+            text-align: center;
+        }
+
+        .print-icon img {
+            width: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><img src="https://banco.bradesco/assets/classic/home/images/logo-mobile.png" style="margin: 0 auto; display: block; width: 145px; height: 32.7976px;">Open Payments Hub</h1>
+    </header>
+    <h2><span style="font-size: 16px;">Lista de Pagamentos do Lote de Pagamento</span></h2>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 32.6847%;">Fornecedor</th>
+                <th style="width: 21.7787%;">Data de Pagamento</th>
+                <th style="width: 16.931%;">Valor</th>
+                <th style="width: 11.4416%;">Status</th>
+                <th style="width: 17.0795%;">Comprovante</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Adicione linhas conforme necessário -->
+            <tr>
+                <td style="width: 32.6847%;">Fornecedor 1</td>
+                <td style="width: 21.7787%;">03/02/2024</td>
+                <td style="width: 16.931%;">R$ 100,00</td>
+                <td style="width: 11.4416%;">Pago</td>
+                <td class="print-icon" style="width: 17.0795%;"><img src="https://cdn-icons-png.flaticon.com/512/3022/3022251.png" alt="Imprimir">&nbsp;<img src="https://cdn-icons-png.freepik.com/256/542/542638.png" alt="Enviar por e-mail"></td>
+            </tr>
+            <tr>
+                <td style="width: 32.6847%;">Fornecedor 2</td>
+                <td style="width: 21.7787%;">15/02/2024</td>
+                <td style="width: 16.931%;">R$ 150,00</td>
+                <td style="width: 11.4416%;">Agendado</td>
+                <td class="print-icon" style="width: 17.0795%;"><br></td>
+            </tr>
+            <tr>
+                <td style="width: 32.6847%;">Fornecedor 3</td>
+                <td style="width: 21.7787%;">03/02/2024</td>
+                <td style="width: 16.931%;">R$ 200,00</td>
+                <td style="width: 11.4416%;">Pago</td>
+                <td class="print-icon" style="width: 17.0795%;"><img src="https://cdn-icons-png.flaticon.com/512/3022/3022251.png" alt="Imprimir">&nbsp;<img src="https://cdn-icons-png.freepik.com/256/542/542638.png" alt="Enviar por e-mail"></td>
+            </tr>
+        </tbody>
+    </table>
+    <p><br></p>
+    <p><br></p>
+    <footer>anco Bradesco SA | CNPJ: 60.746.948.0001-12<br>Cidade De Deus, S/N&ordm; Vila Yara | Osasco | SP | CEP: 06029-900</footer>
+</body>
+
+</html>
